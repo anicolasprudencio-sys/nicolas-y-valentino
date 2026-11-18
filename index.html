@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>  <title>Mi Pagina de Juegos</title>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial;
+        }
+        /* Error tipico de principiante: palabra mal escrita */
+        img {
+            border: 3px solid black;
+            bordr-color: red; 
+            cursor: pointer;
+        }
+        table {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PAGINA PRINCIPAL (index.html) -->
+    <div id="pagina-inicio">
+        <center>
+            <h1>BIENVENIDOS A MI WEB DE VIDEOJUEGOS</h1>
+            <marquee>Los mejores juegos del mundo mundial!!</marquee>
+            <hr>
+
+            <h2>Carrusel de imagenes</h2>
+            <!-- Carrusel basico -->
+            <img id="fotoCarrusel" src="https://placehold.co/400x200/red/white?text=ROBLOX" width="400" height="200">
+            <br><br>
+            <button onclick="anterior()">Anterior</button>
+            <button onclick="siguiente()">Siguiente</button>
+
+            <hr>
+            <h2>Haz clic en la imagen para ver la reseña de cada juego:</h2>
+
+            <!-- Tabla vieja para acomodar las fotos -->
+            <table border="1" cellpadding="10">
+                <tr>
+                    <td>
+                        <center>
+                            <h3>Roblox</h3>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz_jZiaD3GyAkoNvi4yf6JriWgirqjEBNxVPikO0Ghjg&s" width="200" height="150" onclick="irAPagina('roblox')">
+                        </center>
+                    </td>
+                    <td>
+                        <center>
+                            <h3>Brawl Stars</h3>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDcjv6MFLPkQajiS27Xr7KmWEXuv1WlL208UCVw0wlfA&s" width="200" height="150" onclick="irAPagina('brawl')">
+                        </center>
+                    </td>
+                    <td>
+                        <center>
+                            <h3>Minecraft</h3>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH5u_9VKxckX_4sHMQe3_chPAN4ZjRtTTq98Z8cSRwLw&s" width="200" height="150" onclick="irAPagina('minecraft')">
+                        </center>
+                    </td>
+                </tr>
+            </table>
+
+            <br>
+            <p>Pagina creada por m.valentino.aballay@schonthal.esc.edu.ar y a.nicolas.prudencio@schonthal.esc.edu.ar .Todos los derechos reservados 2026.</p>
+        </center>
+    </div>
+
+    <!-- PAGINA DE ROBLOX (roblox.html) -->
+    <div id="pagina-roblox" style="display: none;">
+        <center>
+            <h1>RESEÑA DE ROBLOX</h1>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSph6a9ZXDb8dhaE7T-HPOqiFoLJoPbYHc5nqKA3OBusQ&s=10" width="300">
+            
+            <p>Roblox es un juego muy bueno donde puedes jugar muchos mapas diferentes creados por otras personas.</p>
+            <p>A mi me gusta mucho jugar Brookhaven y Adopt Me aunque aveces se traba un poco el internet.</p>
+            <p><b>Calificacion: 9/10</b></p>
+
+            <br>
+            <button onclick="irAPagina('inicio')">Volver al inicio</button>
+        </center>
+    </div>
+
+    <!-- PAGINA DE BRAWL STARS (brawl.html) -->
+    <div id="pagina-brawl" style="display: none;">
+        <center>
+            <h1>RESEÑA DE BRAWL STARS</h1>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQgllCIuQy3AuDDqDgq9opuD5zBhgReoft1kELegM_Eg&s=10" width="300">
+            
+            <p>Brawl Stars es un juego de celular donde peleas contra otros jugadores usando personajes que se llaman brawlers.</p>
+            <p>El modo de juego de atrapagemas es el mejor de todos pero aveces te tocan compañeros muy malos.</p>
+            <p><b>Calificacion: 8.5/10</b></p>
+
+            <br>
+            <button onclick="irAPagina('inicio')">Volver al inicio</button>
+        </center>
+    </div>
+
+    <!-- PAGINA DE MINECRAFT (minecraft.html) -->
+    <div id="pagina-minecraft" style="display: none;">
+        <center>
+            <h1>RESEÑA DE MINECRAFT</h1>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQep6NZfqD2t0gyz4fkTGPdveTs1424Vx6hF9rhk79jmQ&s=10" width="300">
+            
+            <p>Minecraft es un juego de bloques donde tienes que sobrevivir de noche porque salen zombies y creepers que explotan.</p>
+            <p>Tambien puedes jugar en modo creativo para hacer casas gigantes de diamante sin que nadie te moleste.</p>
+            <p><b>Calificacion: 10/10</b></p>
+
+            <br>
+            <!-- Error tipico: etiqueta de cierre mal puesta -->
+            </br>
+            <button onclick="irAPagina('inicio')">Volver al inicio</button>
+        </center>
+    </div>
+
+    <script>
+        // Codigo del carrusel muy basico
+        var fotos = [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcN5uOYyhDjpVmT3bt2FXLkpBETfGqHJcQggkFq4IPLg&s=10",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwEpYm9oUvEgo3YT9PY8eUyjbl3WdVCKyTRoEiJzTTyw&s=10",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT480uTzPMx6kzohAcKHtYafl1LL8oOqJ0Vyecok94W9g&s=10"
+        ];
+        var numero = 0;
+
+        function siguiente() {
+            numero = numero + 1;
+            if (numero >= fotos.length) {
+                numero = 0;
+            }
+            document.getElementById("fotoCarrusel").src = fotos[numero];
+        }
+
+        function anterior() {
+            numero = numero - 1;
+            if (numero < 0) {
+                numero = fotos.length - 1;
+            }
+            document.getElementById("fotoCarrusel").src = fotos[numero];
+        }
+
+        // Funcion para cambiar entre las paginas dentro del mismo archivo
+        function irAPagina(destino) {
+            document.getElementById("pagina-inicio").style.display = "none";
+            document.getElementById("pagina-roblox").style.display = "none";
+            document.getElementById("pagina-brawl").style.display = "none";
+            document.getElementById("pagina-minecraft").style.display = "none";
+
+            if (destino == "inicio") {
+                document.getElementById("pagina-inicio").style.display = "block";
+                document.body.style.backgroundColor = "lightblue";
+            } else if (destino == "roblox") {
+                document.getElementById("pagina-roblox").style.display = "block";
+                document.body.style.backgroundColor = "lightcoral";
+            } else if (destino == "brawl") {
+                document.getElementById("pagina-brawl").style.display = "block";
+                document.body.style.backgroundColor = "moccasin";
+            } else if (destino == "minecraft") {
+                document.getElementById("pagina-minecraft").style.display = "block";
+                document.body.style.backgroundColor = "lightgreen";
+            }
+        }
+    </script>
+
+</body>
+</html>
